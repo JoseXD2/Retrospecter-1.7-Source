@@ -143,15 +143,13 @@ class MinusEndingState extends FlxSubState {
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 		cameras[0].angle = 0;
 
-		#if android
-		addVirtualPad(NONE, A);
-		#end
+		
 			
 		super.create();
 	}
 
 	override function update(elapsed:Float) {
-		if (controls.ACCEPT) {
+		if (FlxG.keys.justPressed.ENTER) {
 			if (enterPressedOnce/* || PlayState.finishedMinus*/) {
 				//SaveDataManager.instance.endingData.setFinishedMinusFlag(true);
 				if(FlxG.sound.music != null) {

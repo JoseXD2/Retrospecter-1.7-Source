@@ -77,7 +77,11 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		#if sys
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end
+		
+		#if windows
 		if (sys.FileSystem.exists("assets/images/coconut.png") == false)
 		{
 			// (tsg) allow hell to break loose
@@ -555,7 +559,7 @@ class TitleState extends MusicBeatState
 			logoBl.scale.y -= decScale * elapsed;
 		}
 
-		#if mobile
+		#if android
 		for (touch in FlxG.touches.list)
 		{
 			if (touch.justPressed)

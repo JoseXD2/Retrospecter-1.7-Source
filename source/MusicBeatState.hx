@@ -231,10 +231,7 @@ class MusicBeatState extends FlxUIState
 	public static var nextGhostAllowed:Bool = false;
 
 	static function loadingScreen(leState:MusicBeatState, camera:FlxCamera, ?trans:CustomFadeTransition) {
-		if(!nextGhostAllowed) {
-			NoGhost.disable();
-		}
-		nextGhostAllowed = false;
+		{
 
 		var loading = new FlxSprite().loadGraphic(Paths.image("loading/" + songLoadingScreen));
 		loading.setGraphicSize(FlxG.width, FlxG.height);

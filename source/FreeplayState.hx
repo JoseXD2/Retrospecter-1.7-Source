@@ -345,6 +345,11 @@ class FreeplayState extends UnlockableMusicBeatState
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
+		
+		#if android
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
+			
 		super.create();
 	}
 
@@ -370,7 +375,7 @@ class FreeplayState extends UnlockableMusicBeatState
 			var diffPath:String = '-${difficulty.toLowerCase().replace(' ', '-')}';
 			if(diffPath == '-normal') diffPath = ''; //Normal difficulty uses no suffix
 
-			#if sys
+			#if desktop
 			if (FileSystem.exists('assets/data/${formatPath}/${formatPath + diffPath}.json'))
 			#else
 			if (Assets.exists('assets/data/${formatPath}/${formatPath + diffPath}.json', TEXT))

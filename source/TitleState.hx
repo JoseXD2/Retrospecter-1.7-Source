@@ -62,7 +62,7 @@ class TitleState extends MusicBeatState
 
 	var blackScreen:FlxSpriteExtra;
 	var credGroup:FlxGroup;
-	var customUpdateScreen:FlxGroup;
+	
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
@@ -101,7 +101,7 @@ class TitleState extends MusicBeatState
 		trace("Hello, Mortals");
 
 		
-		//#if CHECK_FOR_UPDATES
+		#if windows 
 		if(!closedState || customUpdateScreen) {
 			if(!customUpdateScreen) {
 				var http = new haxe.Http("https://raw.githubusercontent.com/TheRetroSpecter/VsRetro-Internet-Stuff/main/version.txt");
@@ -127,7 +127,8 @@ class TitleState extends MusicBeatState
 			}
 
 			OutdatedState.initHaxeModule();
-			/*#if LOCAL_UPDATE_FILES
+			#end
+			/*#if LOCAL_UPDATE_FILES 
 			var str:String = File.getContent('updateScreen.hscript');
 			if(str == null) str = 'version = ' + MainMenuState.retroVer + ';';
 			try {

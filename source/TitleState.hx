@@ -127,7 +127,7 @@ class TitleState extends MusicBeatState
 			}
 
 			OutdatedState.initHaxeModule();
-			#end
+			
 			/*#if LOCAL_UPDATE_FILES 
 			var str:String = File.getContent('updateScreen.hscript');
 			if(str == null) str = 'version = ' + MainMenuState.retroVer + ';';
@@ -175,6 +175,7 @@ class TitleState extends MusicBeatState
 			http.request();
 			#end*/
 		}
+		#end
 		//#end
 
 		//FlxG.game.focusLostFramerate = 60;

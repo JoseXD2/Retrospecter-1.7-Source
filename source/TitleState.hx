@@ -62,7 +62,7 @@ class TitleState extends MusicBeatState
 
 	var blackScreen:FlxSpriteExtra;
 	var credGroup:FlxGroup;
-	var customUpdateScreen;
+	var customUpdateScreen:FlxGroup;
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
@@ -100,9 +100,7 @@ class TitleState extends MusicBeatState
 
 		trace("Hello, Mortals");
 
-		#if windows
-		// FileSystem.exists('updateScreen.hscript');
-                #end
+		
 		//#if CHECK_FOR_UPDATES
 		if(!closedState || customUpdateScreen) {
 			if(!customUpdateScreen) {

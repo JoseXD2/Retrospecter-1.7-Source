@@ -99,8 +99,9 @@ class TitleState extends MusicBeatState
 
 		trace("Hello, Mortals");
 
+		#if windows
 		var customUpdateScreen = FileSystem.exists('updateScreen.hscript');
-
+                #end
 		//#if CHECK_FOR_UPDATES
 		if(!closedState || customUpdateScreen) {
 			if(!customUpdateScreen) {
@@ -238,7 +239,7 @@ class TitleState extends MusicBeatState
 		}
 		#end
 
-		#if debug
+		#if windows 
 		FlxG.console.registerClass(Paths);
 		#end
 	}

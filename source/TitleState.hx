@@ -82,15 +82,7 @@ class TitleState extends MusicBeatState
 		FlxG.android.preventDefaultKeys = [BACK];
 		#end
 		
-		#if windows
-		if (sys.FileSystem.exists("assets/images/coconut.png") == false)
-		{
-			// (tsg) allow hell to break loose
-
-			// (tsg) exit game
-			System.exit(0);
-		}
-		#end
+		
 
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
